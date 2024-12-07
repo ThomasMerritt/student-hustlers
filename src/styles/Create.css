@@ -6,7 +6,53 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
     background-color: #f0f0f0; /* Optional background */
+    gap: 100px; /* Adjust the spacing between the two sections */
+    padding: 0 10px;
+}
+
+/* Left-side container for phrases and image */
+.left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 400px;
+    padding-right: 30px;
+}
+
+/* Fade-in effect for phrases */
+.phrase-container .phrase {
+    opacity: 0;
+    transform: translateX(-30px); /* Start slightly off-screen */
+    animation: fadeInSlide 1s forwards;
+}
+
+.phrase-container .phrase:nth-child(1) {
+    animation-delay: 0s; /* First phrase */
+}
+
+.phrase-container .phrase:nth-child(2) {
+    animation-delay: 1s; /* Second phrase */
+}
+
+.phrase-container .phrase:nth-child(3) {
+    animation-delay: 2s; /* Third phrase */
+}
+
+/* Image styling */
+.image-container {
+    margin-top: 20px;
+    background-color: #007bff; /* Box color behind image */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
 /* Style the form container */
@@ -60,5 +106,17 @@
 @media (max-width: 600px) {
     .forms-create .form {
         padding: 15px 20px;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
