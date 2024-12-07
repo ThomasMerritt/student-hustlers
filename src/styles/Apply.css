@@ -1,0 +1,14 @@
+.preferences {
+    margin: 20px 0;
+}
+
+.preferences label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.preferences input[type="checkbox"] {
+    margin-right: 10px;
+}

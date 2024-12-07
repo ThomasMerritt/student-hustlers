@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
-import "../styles/Create.css";
+import "../styles/Form.css";
 
 function Create() {
     const [step, setStep] = useState(1); // Track the current step of the form
     const [name, setName] = useState("");
+    const [school, setSchool] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [dob, setDob] = useState(""); // Date of Birth
-    const [age, setAge] = useState("");
     const [selectedServices, setSelectedServices] = useState([]);
     const [budget, setBudget] = useState(""); // State for selected budget
     const [living, setLiving] = useState(""); // Step 4: Living situation
@@ -37,10 +37,6 @@ function Create() {
             alert("Please fill in all fields for Step 1");
             return;
         }
-        if (step === 2 && selectedServices.length !== 3) {
-            alert("Please select exactly 3 services.");
-            return;
-        }
         if (step === 3 && !budget.trim()) { // Validate budget selection
             alert("Please select a budget for Step 3");
             return;
@@ -62,9 +58,9 @@ function Create() {
     
             await setDoc(doc(db, "users", user.uid), {
                 name: name,
+                school: school,
                 email: email,
                 dateOfBirth: dob,
-                age: age,
                 selectedServices: selectedServices,
                 budget: budget,
                 living: living, 
@@ -109,12 +105,18 @@ function Create() {
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
                     />
-                    <input
-                        type="number"
-                        placeholder="Enter your age"
-                        value={age}
-                        onChange={(e) => setAge(e.target.value)}
-                    />
+                     <select
+                        value={school}
+                        onChange={(e) => setSchool(e.target.value)}
+                        required
+                    >
+                        <option value="" disabled>
+                            Select a school
+                        </option>
+                        <option value="University of California - Riverside">
+                            University of California - Riverside
+                        </option>
+                    </select>
                     <button onClick={handleNext}>Next</button>
                 </div>
             )}
