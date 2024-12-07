@@ -38,6 +38,14 @@ function App() {
                     }
                 />
                 <Route
+                    path="/Create"
+                    element={
+                        <MainLayout>
+                            <Create />
+                        </MainLayout>
+                    }
+                />
+                <Route
                     path="/Apply"
                     element={
                         <MainLayout>

@@ -22,7 +22,7 @@ function Navbar() {
             <div className="nav-items">
                 <Link to="/about" className="nav-item">About</Link>
                 <hr className="vertical-line" />
-                <Link to="/create" className="nav-item">Create</Link>
+                <Link to="/create" className="nav-item">Create an Account</Link>
                 <hr className="vertical-line" />
                 {/* Show Login button only if user is not authenticated */}
                 {!isAuthenticated && (
@@ -31,7 +31,7 @@ function Navbar() {
                         <hr className="vertical-line" />
                     </>
                 )}
-                <Link to="/apply" className="nav-item">Apply</Link>
+                <Link to="/apply" className="nav-item">Apply to be a Hustler!</Link>
             </div>
             <div className="right"></div>
         </div>
