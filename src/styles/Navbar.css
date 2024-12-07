@@ -1,0 +1,63 @@
+.navbar {
+    background-color: black;
+    display: grid;
+    grid-template-areas: 
+        "left nav-items right"; /* Define three columns */
+    grid-template-columns: 0.5fr 2fr 0.5fr; /* Left and right are flexible, center is auto-sized */
+    width: 100%;
+    height: 100px;
+}
+
+.nav-items {
+    grid-area: nav-items; /* Place in the center column */
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px;
+}
+
+.nav-item {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-size: 16px;
+    font-weight: 500; /* Slightly bold for clarity */
+    text-transform: uppercase; /* Capitalized text for a clean look */
+    letter-spacing: 1px; /* Space between letters */
+    color: white; /* Neutral color for contrast */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add padding around items */
+    border: 2px solid transparent; /* Add a border for hover effect */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    
+}
+
+.vertical-line {
+    width: 1px; /* Line thickness */
+    height: 30px; /* Line height */
+    background-color: white; /* Line color */
+    border: none; /* Remove default border style from <hr> */
+    margin: 0 10px; /* Spacing around the line */
+}
+
+.nav-item:hover {
+    color: black; /* Change text color on hover */
+    background-color: white; /* Highlight the item */
+    border: 2px solid black; /* Add a border on hover */
+    transform: scale(1.1); /* Slightly enlarge the item */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the color from the parent element */
+    cursor: pointer; /* Ensures a pointer cursor for interactivity */
+}
+
+.left {
+    grid-area: left; /* This area is intentionally left empty */
+}
+
+.right {
+    grid-area: right; /* This area is intentionally left empty */
+}

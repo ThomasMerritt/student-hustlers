@@ -1,0 +1,29 @@
+.student-hustle-banner {
+    background-color: #f8f8f8;
+    display: grid;
+    grid-template-areas: 
+    "None student-hustle-title student-hustle-logo-container";
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 150px;
+}
+
+.student-hustle-title {
+    grid-area: student-hustle-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.student-hustle-logo-container {
+    grid-area: student-hustle-logo-container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-hustle-logo {
+    width: 100px;
+    height: 100px;
+}
