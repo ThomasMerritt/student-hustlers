@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import "../styles/Form.css";
+import "../styles/Login.css";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ function Login() {
     };
 
     return (
-        <div className="forms">
+        <div className="forms-login">
             <form className="form" onSubmit={handleLogin}>
                 <h2>Login</h2>
                 <input
