@@ -1,3 +1,63 @@
+/* Center the form on the page */
+.forms-apply {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh;
+    position: relative;
+    background-color: #f0f0f0; /* Optional background */
+    padding: 0 50px;
+}
+
+/* Style the form container */
+.forms-apply .form {
+    background-color: #ffffff; /* Form background color */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: -50px; /* Slight upward shift */
+}
+
+/* Style headings */
+.forms-apply .form h1 {
+    font-size: 30px;
+    color: #333; /* Font color */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Style input fields */
+.forms-apply .form input,
+.forms-apply .form select,
+.forms-apply .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style buttons */
+.forms-apply .form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forms-apply .form button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Preferences Section Styling */
 .preferences {
     margin: 20px 0;
 }
@@ -11,4 +71,11 @@
 
 .preferences input[type="checkbox"] {
     margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .forms-apply .form {
+        padding: 15px 20px;
+    }
 }

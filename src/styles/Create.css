@@ -75,6 +75,14 @@
     text-align: center;
 }
 
+/* Style headings */
+.forms-create .form h2 {
+    font-size: 30px;
+    color: #333; /* Font color */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 /* Style input fields */
 .forms-create .form input,
 .forms-create .form select {
@@ -119,4 +127,30 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Align labels and checkboxes */
+.services label {
+    display: center;
+    justify-content: space-between; /* Push text left and checkbox right */
+    align-items: center; /* Vertically align the text and checkbox */
+    margin-bottom: 10px; /* Add spacing between items */
+    font-size: 16px; /* Adjust font size for consistency */
+    cursor: pointer; /* Pointer cursor for better UX */
+}
+
+/* Style the checkboxes */
+.services input[type="checkbox"] {
+    margin-bottom: 10px; /* Add spacing between items */
+    margin-left: 150px; /* Ensure spacing from the label */
+    transform: scale(1.2); /* Slightly enlarge the checkbox for visibility */
+    position: relative; /* Allows precise positioning */
+    top: 25px; /* Fine-tune vertical adjustment */
+}
+
+/* Move the "Next" button lower */
+.services button {
+    margin-top: 70px; /* Add spacing above the button */
+    position: relative; /* Allow fine-tuned positioning */
+    top: 10px; /* Move the button lower */
 }
