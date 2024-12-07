@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "../styles/Form.css";
+import "../styles/Create.css";
 
 function Create() {
     const [step, setStep] = useState(1); // Track the current step of the form
@@ -77,7 +78,7 @@ function Create() {
     };
 
     return (
-        <div className="forms">
+        <div className="forms-create">
             {step === 1 && (
                 <div className="form" id="form-1">
                     <h1>Sign Up</h1>

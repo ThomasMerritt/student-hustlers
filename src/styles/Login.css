@@ -1,6 +1,6 @@
 /* Login.css */
 
-/* Style the container to center the form on the page */
+/* Center the form on the page */
 .forms-login {
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin-top: -300px; /* Moves the form up */
+    margin-top: -50px; /* Moves the form up */
 }
 
 /* Style the headings */
