@@ -1,18 +1,50 @@
-#image-section {
+/* src/styles/About.css */
+
+#about-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 40px;
+  background-color: #f4f4f4;
 }
 
-.image-container {
-  max-width: 80%;
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.about-text {
+  width: 50%;
+  padding: 20px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.about-image {
+  width: 45%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: auto; /* Ensures the image gets displayed fully */
 }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  max-width: 600px;
+
+.about-image img {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px;
+  object-fit: contain; /* Makes sure the image doesn't get stretched or cut off */
 }
+
