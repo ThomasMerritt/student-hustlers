@@ -1,100 +1,37 @@
 // src/pages/About.js
 import React from "react";
 import "../styles/About.css";
+import teamImage from '../assets/team.jpg';  // Adjust the path as necessary
 
 function About() {
     return (
         <div>
-            <section id="meet-team-2071">
-                <div class="cs-container">
-                    <div class="cs-content">
-                        <span class="cs-topper">Our Team</span>
-                        <h2 class="cs-title">Meet Our Team</h2>
-                        <p class="cs-text">
-                            Orci eu lobortis elementum nibh tellus. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Luctus accumsan tortor posuere ac ut consequat semper. Et pharetra pharetra massa massa ultricies mi quis.
+            <section id="about-section">
+                <div className="about-content">
+                <div className="about-text">
+                        <h2>About Us</h2>
+                        <p>
+                            At Student Hustle, we understand the challenges college students face when managing their side hustles. As students ourselves, we know the struggles of balancing academic life with running a small business. That's why we created a platform designed to simplify the process of discovering and managing self-care and fashion services on campus.
+                        </p>
+                        <p>
+                            Our website brings together everything student entrepreneurs need in one place—whether it’s managing schedules, processing secure payments, or advertising their services. With built-in scheduling tools, verified profiles, and secure payment systems, we aim to foster trust and convenience for both hustlers and customers.
+                        </p>
+                        <p>
+                            Student Hustle empowers students to operate their businesses more efficiently, reducing the need to juggle multiple platforms. Customers can easily discover local services, book appointments, and enjoy secure, reliable transactions—all on one platform. Whether you're offering a service or seeking one, we’ve got you covered!
                         </p>
                     </div>
-                    <ul class="cs-card-group">
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Ronald Richards</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Cameron Williamson</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Brooklyn Simmons</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Savannah Nguyen</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Albert Flores</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Eleanor Pena</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Dianne Russell</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-name">Dr. Darlene Robertson</span>
-                            <div class="cs-flex">
-                                <span class="cs-job">Dental Surgeon</span>
-                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div className="about-image">
+                        <img 
+                            src={teamImage} 
+                            alt="Student Hustle Team" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                    </div>
                 </div>
-                <picture className="cs-background">
-                    <source 
-                        media="(max-width: 600px)" 
-                        srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
-                    />
-                    <source 
-                        media="(min-width: 601px)" 
-                        srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
-                    />
-                    <img 
-                        loading="lazy" 
-                        decoding="async" 
-                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
-                        alt="dentist staff" 
-                        width="1024" 
-                        height="894" 
-                    />
-                </picture>
             </section>
-                                
         </div>
     );
 }
 
-export default About; // Default export
+export default About;
