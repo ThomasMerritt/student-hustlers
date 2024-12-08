@@ -5,46 +5,92 @@ import "../styles/About.css";
 function About() {
     return (
         <div>
-            <section id="why-choose-1657">
+            <section id="meet-team-2071">
                 <div class="cs-container">
                     <div class="cs-content">
-                        <div class="cs-flex">
-                            <span class="cs-topper">Why Choose Us</span>
-                            <h2 class="cs-title">Grow Your Business with Our New Bold Agency</h2>
-                        </div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <span class="cs-number">01</span>
-                                <p class="cs-li-text">
-                                    Aqestic recusandae laudantium optio amet a quisquam saepe aliquid, voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum cupiditate totam reiciendis quam minus.
-                                </p>
-                            </li>
-                            <li class="cs-li">
-                                <span class="cs-number">02</span>
-                                <p class="cs-li-text">
-                                    Aqestic recusandae laudantium optio amet a quisquam saepe aliquid, voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum cupiditate totam reiciendis quam minus.
-                                </p>
-                            </li>
-                            <li class="cs-li">
-                                <span class="cs-number">03</span>
-                                <p class="cs-li-text">
-                                    Aqestic recusandae laudantium optio amet a quisquam saepe aliquid, voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum cupiditate totam reiciendis quam minus.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>  
-                    <div class="cs-wrapper">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting12.jpg" />
-                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting12.jpg" />
-                            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting12.jpg" alt="meeting" width="630" height="414" />
-                        </picture>
-                        <p class="cs-review">
-                            <svg class="cs-quote" preserveAspectRatio="none" viewBox="0 0 100 93" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity=".4" clip-path="url(#a)" fill="var(--quoteColor)"><path d="M22.94 84H0L18.305.854H55L22.94 84ZM67.94 84H45L63.305.854H100L67.94 84Z"/></g><defs><clipPath id="a-1657"><path fill="#fff" transform="translate(0 .854)" d="M0 0h100v83.146H0z"/></clipPath></defs></svg>
-                            Professional & modern, a theme designed to help your business stand out from the rest. For marketing firms, business endeavors & business consulting.
+                        <span class="cs-topper">Our Team</span>
+                        <h2 class="cs-title">Meet Our Team</h2>
+                        <p class="cs-text">
+                            Orci eu lobortis elementum nibh tellus. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Luctus accumsan tortor posuere ac ut consequat semper. Et pharetra pharetra massa massa ultricies mi quis.
                         </p>
                     </div>
+                    <ul class="cs-card-group">
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Ronald Richards</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Cameron Williamson</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Brooklyn Simmons</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Savannah Nguyen</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Albert Flores</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Eleanor Pena</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Dianne Russell</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                        <li class="cs-item">
+                            <span class="cs-name">Dr. Darlene Robertson</span>
+                            <div class="cs-flex">
+                                <span class="cs-job">Dental Surgeon</span>
+                                <span class="cs-department">Cosmetic and Aesthetic Dentistry</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+                <picture className="cs-background">
+                    <source 
+                        media="(max-width: 600px)" 
+                        srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
+                    />
+                    <source 
+                        media="(min-width: 601px)" 
+                        srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
+                    />
+                    <img 
+                        loading="lazy" 
+                        decoding="async" 
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-staff.jpeg" 
+                        alt="dentist staff" 
+                        width="1024" 
+                        height="894" 
+                    />
+                </picture>
             </section>
                                 
         </div>
