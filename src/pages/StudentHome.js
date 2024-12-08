@@ -107,10 +107,10 @@ function StudentHome() {
                         onBookNow={() => handleBookNow("suhani-sells-seashells")}
                     />
                     <Vendors 
-                        name="John's Shop"
+                        name="Parnika Painting Nails!"
                         rating="4.8"
                         rank="2"
-                        description="Specializes in handmade crafts and gifts."
+                        description="Specializes in painting nails. I have been painting nails ever since I was a kid and I love painting nails! Hope you like my nails!"
                         image="https://via.placeholder.com/125" 
                         isTopVendor={true}
                         onViewProfile={() => console.log("Viewing John's profile")}
@@ -124,10 +124,10 @@ function StudentHome() {
                     </div>
                     <div className="explore-vendors-list">
                         <Vendors 
-                            name="John's Shop"
+                            name="Briana's Braids"
                             rating="4.8"
                             rank="1"
-                            description="Specializes in handmade crafts and gifts."
+                            description="I have been braiding for 10 years. There is no one who can braid hair like me! "
                             image="https://via.placeholder.com/125" 
                             onViewProfile={() => console.log("Viewing John's profile")}
                             onBookNow={() => console.log("Booking with John")}
