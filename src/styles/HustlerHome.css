@@ -348,4 +348,7 @@
     }
 }
 
-                                
+.upcoming-text {
+    font-size: 1.5em; /* Increase font size (adjust as needed) */
+    font-weight: bold; /* Make the text bold */
+}

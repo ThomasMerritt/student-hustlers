@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/HustlerHome.css";
+import pfpImage from '../assets/pfp.jpg';
 
 function HustlerHome() {
     return (
@@ -8,35 +9,35 @@ function HustlerHome() {
                 <div className="cs-wrapper">
                     <div className="cs-container">
                         <div className="cs-content">
-                            <p className="cs-review">
-                                {/* Placed inside p tag for consistent positioning */}
-                                <img
-                                    className="cs-quote"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/quote-left.svg"
-                                    alt="quote icon"
-                                    width="120"
-                                    height="106"
-                                    loading="lazy"
-                                    decoding="async"
-                                    aria-hidden="true"
-                                />
-                                “We purchased our property in Katoomba from Landscape  about 7 years ago. Landscape’s made the process so easy that when it came time to sell we knew immediately where to turn”
-                            </p>
-                            <span className="cs-author">Dany Olmo - Customer of Landscape</span>
+                        <p className="cs-review">
+                            {/* Placed inside p tag for consistent positioning */}
+                            <span className="upcoming-text">Upcoming:</span>
+                            <ul>
+                                <li>
+                                    <strong>Nails (Fill)</strong> for Thomas <span>@ 3:30 PM</span>, <span>December 15th, 2024</span>
+                                </li>
+                                <li>
+                                    <strong>Nails (Full Set)</strong> for Arman <span>@ 5:00 PM</span>, <span>December 15th, 2024</span>
+                                </li>
+                                <li>
+                                    <strong>Nails (Full Set)</strong> for Michalis <span>@ 6:00 PM</span>, <span>December 16th, 2024</span>
+                                </li>
+                            </ul>
+                        </p>
                         </div>
                         <picture className="cs-picture">
                             <source
                                 media="(max-width: 600px)"
-                                srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/man-m.jpg"
+                                srcSet={pfpImage}
                             />
                             <source
                                 media="(min-width: 601px)"
-                                srcSet="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/man.jpg"
+                                srcSet={pfpImage}
                             />
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/man.jpg"
+                                srcSet={pfpImage}
                                 alt="person looking left"
                                 width="328"
                                 height="540"
@@ -50,11 +51,6 @@ function HustlerHome() {
             <section id="why-choose-442">
                 <div className="cs-container">
                     <div className="cs-content">
-                        <span className="cs-topper">Best-In-Class</span>
-                        <h2 className="cs-title">Why Choose Us?</h2>
-                        <p className="cs-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
                     </div>
                     <ul className="cs-card-group">
                         <li className="cs-item">
@@ -71,7 +67,7 @@ function HustlerHome() {
                                 />
                             </picture>
                             <span className="cs-number">263</span>
-                            <p className="cs-item-text">Happy families.</p>
+                            <p className="cs-item-text">Views</p>
                         </li>
                         <li className="cs-item">
                             <picture className="cs-picture">
@@ -87,7 +83,7 @@ function HustlerHome() {
                                 />
                             </picture>
                             <span className="cs-number">18</span>
-                            <p className="cs-item-text">Happy families.</p>
+                            <p className="cs-item-text">Bookings</p>
                         </li>
                         <li className="cs-item">
                             <picture className="cs-picture">
@@ -102,8 +98,8 @@ function HustlerHome() {
                                     aria-hidden="true"
                                 />
                             </picture>
-                            <span className="cs-number">24</span>
-                            <p className="cs-item-text">Happy families.</p>
+                            <span className="cs-number">0</span>
+                            <p className="cs-item-text">Cancellations</p>
                         </li>
                         <li className="cs-item">
                             <picture className="cs-picture">
@@ -118,8 +114,8 @@ function HustlerHome() {
                                     aria-hidden="true"
                                 />
                             </picture>
-                            <span className="cs-number">3</span>
-                            <p className="cs-item-text">Happy families.</p>
+                            <span className="cs-number">$209.80</span>
+                            <p className="cs-item-text">Revenue</p>
                         </li>
                     </ul>
                 </div>
