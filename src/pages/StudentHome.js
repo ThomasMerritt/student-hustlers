@@ -100,7 +100,7 @@ function StudentHome() {
                         name="Suhani Sells Seashells"
                         rating="5.0"
                         rank="1"
-                        description="I sell seashells!"
+                        description="I sell seashells in North District!"
                         image={suhaniShellImage}
                         isTopVendor={true}
                         onViewProfile={() => handleViewProfile("hustler-page")}

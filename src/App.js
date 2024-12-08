@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import StudentHome from "./pages/StudentHome";
 import HustlerPage from "./pages/HustlerPage";
 import HustlerHome from "./pages/HustlerHome";
+import Booking from "./pages/Booking";
 
 function App() {
     return (
@@ -86,6 +87,14 @@ function App() {
                     element={
                       <MainLayout>
                         <HustlerHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/booking"
+                    element={
+                      <MainLayout>
+                        <Booking />
                       </MainLayout>
                     }
                 />
