@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/HustlerPage.css"; // Import styles if any
 import SuhaniPhoto from "../assets/suhani-shell.png";
 
+
+
 function HustlerPage() {
     return (
+        
         <div>
             <section id="services-1666">
                 <div className="cs-container">
@@ -32,49 +35,46 @@ function HustlerPage() {
 
                     </div>
                     <div className="cs-content">
-                        <span className="cs-topper">Our Courses</span>
-                        <h2 className="cs-title">Stitch Center for Process Safety Training</h2>
-                        <p className="cs-text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum accusantium fuga dolore
-                            nulla provident inventore possimus, incidunt, tenetur voluptate laudantium consequuntur
-                            commodi. In perferendis quod, non ad veniam similique assumenda deleniti nobis quaerat
-                            ipsum cum! Velit provident eligendi cumque excepturi!
+                        <h2 className="cs-title">Suhani Sells Seashells</h2>
+                        <p className="cs-text">I sell seashells in North District!
                         </p>
                         <ul className="cs-faq-group">
-                            <li className="cs-faq-item active">
+                        <li className="cs-faq-item">
+                            <button
+                                className="cs-button"
+                                onClick={() => (window.location.href = "/booking")} // Navigate on click
+                            >
+                                <img
+                                    className="cs-icon"
+                                    aria-hidden="true"
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/computer-gold.svg"
+                                    alt="icon"
+                                    width="32"
+                                    height="32"
+                                />
+                                <span className="cs-button-text">Book now</span>
+                            </button>
+                            <p className="cs-item-p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod sapiente placeat
+                                enim molestias quam, illum ullam ipsa repellat, necessitatibus quis cumque
+                                voluptatum nesciunt. Quia possimus est in recusandae saepe nostrum.
+                            </p>
+                        </li>
+                             <li className="cs-faq-item">
                                 <button className="cs-button">
                                     <img
                                         className="cs-icon"
                                         aria-hidden="true"
                                         loading="lazy"
                                         decoding="async"
-                                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/computer-gold.svg"
+                                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/map-pin-gold.svg"
                                         alt="icon"
                                         width="32"
                                         height="32"
                                     />
-                                    <span className="cs-button-text">On-Demand e-Training</span>
-                                    <span className="cs-indicator" aria-hidden="true"></span>
-                                </button>
-                                <p className="cs-item-p">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod sapiente placeat
-                                    enim molestias quam, illum ullam ipsa repellat, necessitatibus quis cumque
-                                    voluptatum nesciunt. Quia possimus est in recusandae saepe nostrum.
-                                </p>
-                            </li>
-                            <li className="cs-faq-item">
-                                <button className="cs-button">
-                                    <img
-                                        className="cs-icon"
-                                        aria-hidden="true"
-                                        loading="lazy"
-                                        decoding="async"
-                                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/calendar-gold.svg"
-                                        alt="icon"
-                                        width="32"
-                                        height="32"
-                                    />
-                                    <span className="cs-button-text">Hybrid e-Training</span>
+                                    <span className="cs-button-text">Services</span>
                                     <span className="cs-indicator" aria-hidden="true"></span>
                                 </button>
                                 <p className="cs-item-p">
@@ -95,7 +95,7 @@ function HustlerPage() {
                                         width="32"
                                         height="32"
                                     />
-                                    <span className="cs-button-text">Live Instructor e-Training</span>
+                                    <span className="cs-button-text">Read reviews</span>
                                     <span className="cs-indicator" aria-hidden="true"></span>
                                 </button>
                                 <p className="cs-item-p">
@@ -116,8 +116,7 @@ function HustlerPage() {
                                         width="32"
                                         height="32"
                                     />
-                                    <span className="cs-button-text">Onsite Classroom Training</span>
-                                    <span className="cs-indicator" aria-hidden="true"></span>
+                                    <span className="cs-button-text">Message Vendor</span>
                                 </button>
                                 <p className="cs-item-p">
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod sapiente placeat
@@ -126,7 +125,6 @@ function HustlerPage() {
                                 </p>
                             </li>
                         </ul>
-                        <a href="#" className="cs-button-solid">View All Courses</a>
                     </div>
                 </div>
             </section>
