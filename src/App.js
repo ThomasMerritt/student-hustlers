@@ -21,7 +21,6 @@ function App() {
                     path="/"
                     element={
                         <MainLayout>
-                            <Navbar />
                             <Home />
                         </MainLayout>
                     }
@@ -30,7 +29,6 @@ function App() {
                     path="/about"
                     element={
                         <MainLayout>
-                            <Navbar />
                             <About />
                         </MainLayout>
                     }
@@ -39,7 +37,6 @@ function App() {
                     path="/login"
                     element={
                         <MainLayout>
-                            <Navbar />
                             <Login />
                         </MainLayout>
                     }
@@ -48,7 +45,6 @@ function App() {
                     path="/Create"
                     element={
                         <MainLayout>
-                            <Navbar />
                             <Create />
                         </MainLayout>
                     }
@@ -57,7 +53,6 @@ function App() {
                     path="/Apply"
                     element={
                         <MainLayout>
-                            <Navbar />
                             <Apply />
                         </MainLayout>
                     }
