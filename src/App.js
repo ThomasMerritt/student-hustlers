@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import Apply from "./pages/Apply";
 import Navbar from "./components/Navbar";
 import StudentHome from "./pages/StudentHome";
+import HustlerPage from "./pages/HustlerPage";
+import HustlerHome from "./pages/HustlerHome";
 
 function App() {
     return (
@@ -65,6 +67,30 @@ function App() {
                     element={
                       <MainLayout>
                         <StudentHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/student-home"
+                    element={
+                      <MainLayout>
+                        <StudentHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/hustler-page"
+                    element={
+                      <MainLayout>
+                        <HustlerPage />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/hustler-home"
+                    element={
+                      <MainLayout>
+                        <HustlerHome />
                       </MainLayout>
                     }
                 />
