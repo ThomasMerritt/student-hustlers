@@ -40,6 +40,11 @@
     margin: 0 10px; /* Spacing around the line */
 }
 
+.logout-button {
+    background-color: black;
+    color: white;
+}
+
 .nav-item:hover {
     color: black; /* Change text color on hover */
     background-color: white; /* Highlight the item */
