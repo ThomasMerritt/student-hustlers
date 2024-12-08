@@ -2,8 +2,19 @@ import React from "react";
 import "../styles/StudentHome.css";
 import Vendors from "../components/Vendors";
 import suhaniShellImage from '../assets/suhani-shell.png';
+import { useNavigate } from "react-router-dom";
 
 function StudentHome() {
+    const navigate = useNavigate();
+
+    const handleViewProfile = (vendorName) => {
+        navigate(`/${vendorName}`); // Navigate to vendor-specific page
+    };
+
+    const handleBookNow = (vendorName) => {
+        navigate(`/book-vendor/${vendorName}`); // Navigate to booking page
+    };
+
     return (
         <div className="student-home">
             <div className="search-profile-container">
@@ -92,8 +103,8 @@ function StudentHome() {
                         description="I sell seashells!"
                         image={suhaniShellImage}
                         isTopVendor={true}
-                        onViewProfile={() => console.log("Viewing John's profile")}
-                        onBookNow={() => console.log("Booking with John")}
+                        onViewProfile={() => handleViewProfile("hustler-page")}
+                        onBookNow={() => handleBookNow("suhani-sells-seashells")}
                     />
                     <Vendors 
                         name="John's Shop"
