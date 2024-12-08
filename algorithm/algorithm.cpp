@@ -12,6 +12,7 @@ struct Vendor {
     vector<string> specificServices;
     string location;
     float rating;
+    string pricing;
 };
 
 // DISPLAY
@@ -79,10 +80,10 @@ void collectPreferences(vector<string>& categories, vector<string>& services, st
         }
     }
 
-    cout << "What’s most important to you? (1. Vendor Location, 2. Ratings, 3. Service Match): ";
+    cout << "What’s most important to you? (1. Vendor Location, 2. Low to High Pricing, 3. Ratings, 4. Service Match): ";
     getline(cin, priority);
-    while (priority != "1" && priority != "2" && priority != "3") {
-        cout << "Invalid input. Please enter 1 for Vendor Location, 2 for Ratings, or 3 for Service Match: ";
+    while (priority != "1" && priority != "2" && priority != "3" && priority != "4") {
+        cout << "Invalid input. Please enter 1 for Vendor Location, 2 for Low to High Pricing, 3 for Ratings, or 4 for Service Match: ";
         getline(cin, priority);
     }
 
@@ -111,7 +112,7 @@ vector<vector<Vendor>> suggestTop3VendorsPerCategory(const vector<Vendor>& vendo
             }
         }
 
-        if (priority == "1") { // Location
+        if (priority == "1") { 
             sort(vendorMatches.begin(), vendorMatches.end(), [&](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
                 bool aInLocation = a.first.location == customerLocation;
                 bool bInLocation = b.first.location == customerLocation;
@@ -120,13 +121,17 @@ vector<vector<Vendor>> suggestTop3VendorsPerCategory(const vector<Vendor>& vendo
                 }
                 return a.first.location < b.first.location; // Default alphabetical order for remaining vendors
             });
-        } else if (priority == "2") { // Ratings
+        } else if (priority == "2") { 
+            sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
+                return a.first.pricing < b.first.pricing; 
+            });
+        } else if (priority == "3") { 
             sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
                 return a.first.rating > b.first.rating;
             });
-        } else if (priority == "3") { // Service Match
+        } else if (priority == "4") { 
             sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
-                return a.second > b.second; // More matches first
+                return a.second > b.second; 
             });
         }
 
@@ -144,29 +149,30 @@ vector<vector<Vendor>> suggestTop3VendorsPerCategory(const vector<Vendor>& vendo
     return topVendorsPerCategory;
 }
 
+
 int main() {
     // TEST
     vector<Vendor> vendors = {
-        {"Beauty Nails", "Nails", {"Nails - Acrylics", "Nails - Gel"}, "North District", 4.8},
-        {"Perfect Nails", "Nails", {"Nails - Design", "Nails - General Maintenance"}, "University Village", 4.5},
-        {"Hair Express", "Hair", {"Hair - Hair Cuts (Women)", "Hair - Styling"}, "University Village Towers", 4.6},
-        {"Men's Grooming", "Hair", {"Hair - Hair Cuts (Men)", "Hair - Perms"}, "North District", 4.4},
-        {"Braids and Beyond", "Hair", {"Hair - Braids"}, "Campus Corner", 4.7},
-        {"AlterPro", "Clothing Alterations", {"Alterations - Alterations"}, "Glen Mor", 4.5},
-        {"Elegant Alterations", "Clothing Alterations", {"Alterations - Alterations"}, "Off Campus", 4.6},
-        {"Jewelry World", "Jewelry", {"Jewelry - Necklaces", "Jewelry - Bracelets"}, "Off Campus", 4.7},
-        {"Shiny Things", "Jewelry", {"Jewelry - Bracelets", "Jewelry - Piercings"}, "North District", 4.5},
-        {"Piercing Palace", "Piercing", {"Piercing - Ears", "Piercing - Nose"}, "North District", 4.3},
-        {"Glam Makeup", "Make-up", {"Make-up - Glam", "Make-up - Natural"}, "Aberdeen-Inverness Dorms", 4.9},
-        {"Special FX Makeup", "Make-up", {"Make-up - Special Effects"}, "Off Campus", 4.8},
-        {"Trendsetters", "Apparel", {"Apparel - Shoes", "Apparel - Clothing"}, "University Village", 4.2},
-        {"Fashion Fix", "Apparel", {"Apparel - Shirts", "Apparel - Pants"}, "Glen Mor", 4.4},
-        {"Accessory World", "Apparel", {"Apparel - Accessories (Hats, scarfs, etc.)"}, "North District", 4.5},
-        {"Piercing Express", "Piercing", {"Piercing - Naval", "Piercing - Lip"}, "Campus Corner", 4.6},
-        {"Polished Jewelry", "Jewelry", {"Jewelry - Bracelets", "Jewelry - Necklaces"}, "Aberdeen-Inverness Dorms", 4.6},
-        {"Quick Alterations", "Clothing Alterations", {"Alterations - Alterations"}, "University Village Towers", 4.3},
-        {"Styling Perfection", "Hair", {"Hair - Hair Cuts (Women)", "Hair - Styling", "Hair - Braids"}, "Off Campus", 4.8},
-        {"Full Glam Studio", "Make-up", {"Make-up - Glam", "Make-up - Natural", "Make-up - Special Effects"}, "University Village", 4.9}
+        {"Beauty Nails", "Nails", {"Nails - Acrylics", "Nails - Gel"}, "North District", 4.8, "$$$"},
+        {"Perfect Nails", "Nails", {"Nails - Design", "Nails - General Maintenance"}, "University Village", 4.5, "$$"},
+        {"Hair Express", "Hair", {"Hair - Hair Cuts (Women)", "Hair - Styling"}, "University Village Towers", 4.6, "$$"},
+        {"Men's Grooming", "Hair", {"Hair - Hair Cuts (Men)", "Hair - Perms"}, "North District", 4.4, "$$"},
+        {"Braids and Beyond", "Hair", {"Hair - Braids"}, "Campus Corner", 4.7, "$"},
+        {"AlterPro", "Clothing Alterations", {"Alterations - Alterations"}, "Glen Mor", 4.5, "$$"},
+        {"Elegant Alterations", "Clothing Alterations", {"Alterations - Alterations"}, "Off Campus", 4.6, "$$"},
+        {"Jewelry World", "Jewelry", {"Jewelry - Necklaces", "Jewelry - Bracelets"}, "Off Campus", 4.7, "$$$"},
+        {"Shiny Things", "Jewelry", {"Jewelry - Bracelets", "Jewelry - Piercings"}, "North District", 4.5, "$"},
+        {"Piercing Palace", "Piercing", {"Piercing - Ears", "Piercing - Nose"}, "North District", 4.3, "$"},
+        {"Glam Makeup", "Make-up", {"Make-up - Glam", "Make-up - Natural"}, "Aberdeen-Inverness Dorms", 4.9, "$$$"},
+        {"Special FX Makeup", "Make-up", {"Make-up - Special Effects"}, "Off Campus", 4.8, "$$"},
+        {"Trendsetters", "Apparel", {"Apparel - Shoes", "Apparel - Clothing"}, "University Village", 4.2, "$$"},
+        {"Fashion Fix", "Apparel", {"Apparel - Shirts", "Apparel - Pants"}, "Glen Mor", 4.4, "$$"},
+        {"Accessory World", "Apparel", {"Apparel - Accessories (Hats, scarfs, etc.)"}, "North District", 4.5, "$"},
+        {"Piercing Express", "Piercing", {"Piercing - Naval", "Piercing - Lip"}, "Campus Corner", 4.6, "$$"},
+        {"Polished Jewelry", "Jewelry", {"Jewelry - Bracelets", "Jewelry - Necklaces"}, "Aberdeen-Inverness Dorms", 4.6, "$$"},
+        {"Quick Alterations", "Clothing Alterations", {"Alterations - Alterations"}, "University Village Towers", 4.3, "$$"},
+        {"Styling Perfection", "Hair", {"Hair - Hair Cuts (Women)", "Hair - Styling", "Hair - Braids"}, "Off Campus", 4.8, "$$$"},
+        {"Full Glam Studio", "Make-up", {"Make-up - Glam", "Make-up - Natural", "Make-up - Special Effects"}, "University Village", 4.9, "$$$"}
     };
 
     vector<string> categories, services;
@@ -184,6 +190,7 @@ int main() {
             cout << "  Name: " << vendor.name
                  << ", Location: " << vendor.location
                  << ", Rating: " << vendor.rating
+                 << ", Pricing: " << vendor.pricing
                  << ", Services: ";
             for (const string& service : vendor.specificServices) {
                 cout << service << ", ";
