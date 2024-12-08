@@ -7,7 +7,6 @@ function MainLayout({ children }) {
     return (
         <div>
             <Banner />
-            <Navbar />
             <div className="content">{children}</div>
         </div>
     );

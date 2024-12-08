@@ -8,7 +8,7 @@ function Caraousel() {
                 <p>Prev</p>
             </div>
             <div className="carousel-items">
-
+        
             </div>
             <div className="right-arrow">
                 <p>Next</p>
