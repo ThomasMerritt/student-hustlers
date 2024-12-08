@@ -3,25 +3,26 @@
 #include <string>
 #include <algorithm>
 #include <sstream>
+#include <unordered_map>
 using namespace std;
 
-// Vendor struct to store vendor data
+// VENDOR DATA
 struct Vendor {
     string name;
     string category;
-    string specificService;
+    vector<string> specificServices;
     string location;
     float rating;
 };
 
-// Function to display options
+// DISPLAY
 void displayOptions(const vector<string>& options) {
     for (size_t i = 0; i < options.size(); ++i) {
         cout << i + 1 << ". " << options[i] << endl;
     }
 }
 
-// Function to collect user preferences
+// SURVEY
 void collectPreferences(vector<string>& categories, vector<string>& services, string& priority) {
     vector<string> mainCategories = {
         "Nails", "Apparel", "Hair", "Clothing Alterations", "Jewelry", "Make-up", "Piercing"
@@ -32,181 +33,134 @@ void collectPreferences(vector<string>& categories, vector<string>& services, st
 
     string input;
     getline(cin, input);
+
+    // Parse selected categories
     istringstream iss(input);
+    vector<int> choices;
     int choice;
     while (iss >> choice) {
         if (choice >= 1 && choice <= mainCategories.size()) {
             categories.push_back(mainCategories[choice - 1]);
         } else {
-            cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
+            cout << "Invalid choice: " << choice << ". Skipping.\n";
         }
     }
 
-    // Collect specific services for selected categories
-    for (const string& category : categories) { // Iterate through all selected categories
+    // PROVIDED SERVICES
+    for (const string& category : categories) {
+        vector<string> specificServices;
+
         if (category == "Nails") {
-            vector<string> nailsServices = {"Acrylics", "Gel", "Design", "General Maintenance"};
-            cout << "What specific services are you looking for in Nails?\n";
-            displayOptions(nailsServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= nailsServices.size()) {
-                    services.push_back("Nails - " + nailsServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
+            specificServices = {"Acrylics", "Gel", "Design", "General Maintenance"};
         } else if (category == "Apparel") {
-            vector<string> apparelServices = {"Shoes", "Clothing", "Shirts", "Pants", "Accessories (Hats, scarfs, etc.)"};
-            cout << "What specific services are you looking for in Apparel?\n";
-            displayOptions(apparelServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= apparelServices.size()) {
-                    services.push_back("Apparel - " + apparelServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
+            specificServices = {"Shoes", "Clothing", "Shirts", "Pants", "Accessories (Hats, scarfs, etc.)"};
         } else if (category == "Hair") {
-            vector<string> hairServices = {"Hair Cuts (Men)", "Hair Cuts (Women)", "Styling", "Braids", "Perms"};
-            cout << "What specific services are you looking for in Hair?\n";
-            displayOptions(hairServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= hairServices.size()) {
-                    services.push_back("Hair - " + hairServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
+            specificServices = {"Hair Cuts (Men)", "Hair Cuts (Women)", "Styling", "Braids", "Perms"};
         } else if (category == "Clothing Alterations") {
-            vector<string> alterationServices = {"Alterations"};
-            cout << "What specific services are you looking for in Alterations?\n";
-            displayOptions(alterationServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= alterationServices.size()) {
-                    services.push_back("Alterations - " + alterationServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
+            specificServices = {"Alterations"};
         } else if (category == "Jewelry") {
-            vector<string> jewelryServices = {"Piercings", "Bracelets", "Necklaces"};
-            cout << "What specific services are you looking for in Jewelry?\n";
-            displayOptions(jewelryServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= jewelryServices.size()) {
-                    services.push_back("Jewelry - " + jewelryServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
+            specificServices = {"Piercings", "Bracelets", "Necklaces"};
         } else if (category == "Make-up") {
-            vector<string> makeupServices = {"Natural", "Glam", "Special Effects"};
-            cout << "What type of makeup would you be interested in getting?\n";
-            displayOptions(makeupServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= makeupServices.size()) {
-                    services.push_back("Make-up - " + makeupServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
-            }
-        } if (category == "Piercing") {
-            vector<string> piercingServices = {"Ears", "Naval", "Nose", "Lip"};
-            cout << "What specific services are you looking for in Piercing?\n";
-            displayOptions(piercingServices);
-            getline(cin, input);
-            iss.clear();
-            iss.str(input);
-            while (iss >> choice) {
-                if (choice >= 1 && choice <= piercingServices.size()) {
-                    services.push_back("Piercing - " + piercingServices[choice - 1]);
-                } else {
-                    cout << "Invalid choice: " << choice << ". Please select a valid option." << endl;
-                }
+            specificServices = {"Natural", "Glam", "Special Effects"};
+        } else if (category == "Piercing") {
+            specificServices = {"Ears", "Naval", "Nose", "Lip"};
+        }
+
+        cout << "What specific services are you looking for in " << category << "?\n";
+        displayOptions(specificServices);
+
+        getline(cin, input);
+        iss.clear();
+        iss.str(input);
+        while (iss >> choice) {
+            if (choice >= 1 && choice <= specificServices.size()) {
+                services.push_back(category + " - " + specificServices[choice - 1]);
+            } else {
+                cout << "Invalid choice: " << choice << ". Skipping.\n";
             }
         }
     }
 
-    cout << "What’s most important to you? (1. Vendor Location, 2. Ratings): ";
+    cout << "What’s most important to you? (1. Vendor Location, 2. Ratings, 3. Service Match): ";
     getline(cin, priority);
-    while (priority != "1" && priority != "2") {
-        cout << "Invalid input. Please enter 1 for Vendor Location or 2 for Ratings: ";
+    while (priority != "1" && priority != "2" && priority != "3") {
+        cout << "Invalid input. Please enter 1 for Vendor Location, 2 for Ratings, or 3 for Service Match: ";
         getline(cin, priority);
     }
 }
 
-
-// Function to match vendors to preferences
+// PREFERENCE MATCHING
 vector<Vendor> suggestVendors(const vector<Vendor>& vendors, const vector<string>& services, const string& priority) {
-    vector<Vendor> suggestions;
+    vector<pair<Vendor, int>> vendorMatches;
 
-    // Filter vendors by services
-    for (size_t i = 0; i < vendors.size(); ++i) {
-        const Vendor& vendor = vendors[i];
-        for (size_t j = 0; j < services.size(); ++j) {
-            const string& service = services[j];
-            if (vendor.specificService == service) {
-                suggestions.push_back(vendor);
+    for (const Vendor& vendor : vendors) {
+        int matchCount = 0;
+        for (const string& service : services) {
+            if (find(vendor.specificServices.begin(), vendor.specificServices.end(), service) != vendor.specificServices.end()) {
+                matchCount++;
             }
         }
+        vendorMatches.emplace_back(vendor, matchCount);
     }
 
-    // Sort based on priority
     if (priority == "1") { // Location
-        sort(suggestions.begin(), suggestions.end(), [](const Vendor& a, const Vendor& b) {
-            return a.location < b.location;
+        sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
+            return a.first.location < b.first.location;
         });
     } else if (priority == "2") { // Ratings
-        sort(suggestions.begin(), suggestions.end(), [](const Vendor& a, const Vendor& b) {
-            return a.rating > b.rating;
+        sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
+            return a.first.rating > b.first.rating;
         });
+    } else if (priority == "3") { // Service Match
+        sort(vendorMatches.begin(), vendorMatches.end(), [](const pair<Vendor, int>& a, const pair<Vendor, int>& b) {
+            return a.second > b.second; // More matches first
+        });
+    }
+
+    vector<Vendor> suggestions;
+    for (const auto& pair : vendorMatches) {
+        if (pair.second > 0) { // Only include vendors with at least one match
+            suggestions.push_back(pair.first);
+        }
     }
 
     return suggestions;
 }
 
 int main() {
-    // Sample vendor data
-    vector<Vendor> vendors;
-    vendors.push_back({"Beauty Nails", "Nails", "Nails - Acrylics", "North District", 4.8});
-    vendors.push_back({"Hair Express", "Hair", "Hair - Hair Cuts (Women)", "University Village Towers", 4.6});
-    vendors.push_back({"AlterPro", "Clothing Alterations", "Alterations", "Glen Mor", 4.5});
-    vendors.push_back({"Jewelry World", "Jewelry", "Jewelry - Necklaces", "{Off campus address}", 4.7});
-    vendors.push_back({"Glam Makeup", "Make-up", "Make-up - Glam", "Aberdeen-Inverness Dorms", 4.9});
+    // TEST
+    vector<Vendor> vendors = {
+        {"Beauty Nails", "Nails", {"Nails - Acrylics", "Nails - Gel"}, "North District", 4.8},
+        {"Hair Express", "Hair", {"Hair - Hair Cuts (Women)", "Hair - Styling"}, "University Village Towers", 4.6},
+        {"AlterPro", "Clothing Alterations", {"Alterations - Alterations"}, "Glen Mor", 4.5},
+        {"Jewelry World", "Jewelry", {"Jewelry - Necklaces", "Jewelry - Bracelets"}, "Off Campus", 4.7},
+        {"Glam Makeup", "Make-up", {"Make-up - Glam", "Make-up - Natural"}, "Aberdeen-Inverness Dorms", 4.9},
+        {"Piercing Palace", "Piercing", {"Piercing - Ears", "Piercing - Nose"}, "North District", 4.3},
+        {"Fashion Fix", "Apparel", {"Apparel - Shirts", "Apparel - Pants"}, "Glen Mor", 4.4},
+        {"Style Studio", "Hair", {"Hair - Braids", "Hair - Perms"}, "University Village Towers", 4.2},
+        {"Elegant Alterations", "Clothing Alterations", {"Alterations - Alterations"}, "Off Campus", 4.6},
+        {"Shiny Things", "Jewelry", {"Jewelry - Bracelets", "Jewelry - Piercings"}, "North District", 4.5},
+    };
 
     vector<string> categories, services;
     string priority;
 
-    // Collect user preferences
+   
     collectPreferences(categories, services, priority);
 
-    // Suggest vendors
     vector<Vendor> suggestions = suggestVendors(vendors, services, priority);
 
-    // Display suggestions
+    // OUTPUT
     cout << "\nRecommended Vendors:\n";
-    for (size_t i = 0; i < suggestions.size(); ++i) {
-        const Vendor& vendor = suggestions[i];
-        cout << "Name: " << vendor.name << ", Service: " << vendor.specificService
-             << ", Location: " << vendor.location << ", Rating: " << vendor.rating << endl;
+    for (const Vendor& vendor : suggestions) {
+        cout << "Name: " << vendor.name
+             << ", Location: " << vendor.location
+             << ", Rating: " << vendor.rating
+             << ", Services: ";
+        for (const string& service : vendor.specificServices) {
+            cout << service << ", ";
+        }
+        cout << endl;
     }
 
     return 0;
