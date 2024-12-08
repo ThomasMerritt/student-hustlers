@@ -6,6 +6,8 @@ import Create from "./pages/Create";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
+import Navbar from "./components/Navbar";
+import StudentHome from "./pages/StudentHome";
 
 function App() {
     return (
@@ -17,6 +19,7 @@ function App() {
                     path="/"
                     element={
                         <MainLayout>
+                            <Navbar />
                             <Home />
                         </MainLayout>
                     }
@@ -25,6 +28,7 @@ function App() {
                     path="/about"
                     element={
                         <MainLayout>
+                            <Navbar />
                             <About />
                         </MainLayout>
                     }
@@ -33,6 +37,7 @@ function App() {
                     path="/login"
                     element={
                         <MainLayout>
+                            <Navbar />
                             <Login />
                         </MainLayout>
                     }
@@ -41,6 +46,7 @@ function App() {
                     path="/Create"
                     element={
                         <MainLayout>
+                            <Navbar />
                             <Create />
                         </MainLayout>
                     }
@@ -49,8 +55,17 @@ function App() {
                     path="/Apply"
                     element={
                         <MainLayout>
+                            <Navbar />
                             <Apply />
                         </MainLayout>
+                    }
+                />
+                <Route
+                    path="/student-home"
+                    element={
+                      <MainLayout>
+                        <StudentHome />
+                      </MainLayout>
                     }
                 />
                 {/* Routes without MainLayout */}
