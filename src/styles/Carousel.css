@@ -1,56 +1,56 @@
-.carousel {
-    background-color: white;
-    width: 100%;
-    height: 300px;
-    display: grid;
-    grid-template-areas:
-        "left carousel-item right";
-    grid-template-columns: 1fr 8fr 1fr;
-    justify-items: center;
-    align-items: center;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
+.carousel-items {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  height: 100%;
 }
 
-.carousel-items {
-    grid-area: carousel-item;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: 300px; /* Set a fixed height for the carousel */
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-    overflow: hidden;
-    position: relative;
-  }
+.carousel-image {
+  width: 100%; /* Ensures the image spans the full width of the container */
+  height: 100%; /* Ensures the image spans the full height of the container */
+  object-fit: cover; /* Scales the image proportionally to fill the container */
+  position: absolute; /* Position for layering */
+  transition: transform 0.5s ease-in-out;
+  animation-duration: 0.5s;
+}
 
-  .left-arrow, .right-arrow {
-    position: absolute;
-    top: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    user-select: none;
-    z-index: 10;
-  }
-  
-  .right-arrow {
-    left: 10px;
-  }
+.carousel {
+  background-color: white;
+  width: 100%;
+  height: 500px; /* Set a fixed height for the carousel */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
 
-  .left-arrow {
-    right: 10px
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px below */
   }
-  
-  .left-arrow p, .right-arrow p {
-    margin: 0;
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
   }
+}
+
+@keyframes fadeOutToBottom {
+  0% {
+    opacity: 1;
+    transform: translateY(0); /* Start at original position */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px); /* Move 50px below */
+  }
+}
+
+.carousel-image.active {
+  animation: fadeInFromBottom 0.5s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+.carousel-image.exiting {
+  animation: fadeOutToBottom 0.5s ease-in-out forwards; /* Apply fade-out animation */
+}

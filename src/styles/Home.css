@@ -1,0 +1,56 @@
+.home {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: hidden;
+    position: relative; /* Ensures .home is positioned for the gradient to overlay */
+    flex-direction: column;
+}
+
+.home::after {
+    content: ""; /* Pseudo-element for the gradient overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Covers entire height of the .home div */
+    z-index: 15; /* Ensures this gradient overlay is above the carousel */
+    pointer-events: none; /* Allows interactions with underlying elements */
+}
+
+.horizontal-line {
+    border: none;
+    border-top: 3px solid black;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.home-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.home-content h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.home-content ul {
+    list-style-type: disc;
+    margin: 20px auto;
+    padding: 0;
+    max-width: 600px;
+    color: #555;
+    text-align: left;
+}
