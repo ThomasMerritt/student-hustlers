@@ -153,6 +153,7 @@ function Create() {
                                     type="checkbox"
                                     value="Haircut/Hairstyle"
                                     onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Haircut/Hairstyle
                             </label>
@@ -161,6 +162,7 @@ function Create() {
                                     type="checkbox"
                                     value="Nails"
                                     onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Nails
                             </label>
@@ -168,7 +170,7 @@ function Create() {
                                 <input
                                     type="checkbox"
                                     value="Piercing"
-                                    onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Piercing
                             </label>
@@ -177,6 +179,7 @@ function Create() {
                                     type="checkbox"
                                     value="Alterations"
                                     onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Alterations
                             </label>
@@ -185,6 +188,7 @@ function Create() {
                                     type="checkbox"
                                     value="Buying Clothes"
                                     onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Buying Clothes
                             </label>
@@ -193,6 +197,7 @@ function Create() {
                                     type="checkbox"
                                     value="Makeup"
                                     onChange={handleServiceSelection}
+                                    className="services-checkbox"
                                 />
                                 Makeup
                             </label>

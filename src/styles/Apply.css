@@ -29,8 +29,16 @@
     text-align: center;
 }
 
+.form-input  {
+    margin-bottom: 0px;
+}
+
+
+.form-input {
+    margin-bottom: 15px;
+}
+
 /* Style input fields */
-.forms-apply .form input,
 .forms-apply .form select,
 .forms-apply .form textarea {
     width: 100%;
@@ -39,6 +47,25 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+
+.forms-apply .form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
+.services-checkbox {
+    width: 200px;
+}
+
+
+#form-3 {
+    height: 800px;
 }
 
 /* Style buttons */
@@ -58,19 +85,24 @@
 }
 
 /* Preferences Section Styling */
+/* Preferences Section Styling */
 .preferences {
     margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .preferences label {
-    display: block;
-    margin-bottom: 10px;
+    display: flex; /* Use flexbox for proper alignment */
+    align-items: center; /* Align input and label text vertically */
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 10px; /* Add spacing between checkboxes */
 }
 
 .preferences input[type="checkbox"] {
-    margin-right: 10px;
+    vertical-align: middle; /* Ensure checkbox aligns with text */
 }
 
 /* Responsive adjustments */
