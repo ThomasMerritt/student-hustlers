@@ -18,8 +18,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 400px;
+    max-width: 600px;
     padding-right: 30px;
+}
+
+/* Group styling for phrases and images */
+.phrase-image-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Space between groups */
 }
 
 /* Fade-in effect for phrases */
@@ -41,17 +49,49 @@
     animation-delay: 2s; /* Third phrase */
 }
 
-/* Image styling */
+/* Image fade-in effect */
+.phrase-image-group img {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-30px); /* Start slightly off-screen */
+    animation: fadeInSlide 1s forwards; /* Use fade-in animation */
+    animation-delay: 5s; /* Delay to match the text fade-in */
+    max-width: 80%; /* Limit image size to prevent overlap */
+    max-height: 150px; /* Restrict height to avoid covering the banner */
+    border-radius: 8px; /* Optional rounded corners */
+    margin-top: 10px; /* Space between text and image */
+    object-fit: contain; /* Maintains image aspect ratio */
+}
+
+.phrase-image-group:nth-child(2) img {
+    animation-delay: 1.5s; /* Adjust delay for the second phrase */
+}
+
+.phrase-image-group:nth-child(3) img {
+    animation-delay: 2.5s; /* Adjust delay for the third phrase */
+}
+
+/* Fade-in animation */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Image container styling */
 .image-container {
-    margin-top: 20px;
-    background-color: #007bff; /* Box color behind image */
+    margin-top: 0px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 80%;
     border-radius: 8px;
 }
 
@@ -69,14 +109,6 @@
 
 /* Style headings */
 .forms-create .form h1 {
-    font-size: 30px;
-    color: #333; /* Font color */
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Style headings */
-.forms-create .form h2 {
     font-size: 30px;
     color: #333; /* Font color */
     margin-bottom: 30px;
@@ -107,7 +139,7 @@
 }
 
 .forms-create .form button:hover {
-    background-color: #0056b3; /* Darker color on hover */
+    background-color: #d9dbdd; /* Darker color on hover */
 }
 
 /* Responsive adjustments */
@@ -117,40 +149,7 @@
     }
 }
 
-/* Fade-in animation */
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Align labels and checkboxes */
-.services label {
-    display: center;
-    justify-content: space-between; /* Push text left and checkbox right */
-    align-items: center; /* Vertically align the text and checkbox */
-    margin-bottom: 10px; /* Add spacing between items */
-    font-size: 16px; /* Adjust font size for consistency */
-    cursor: pointer; /* Pointer cursor for better UX */
-}
-
-/* Style the checkboxes */
-.services input[type="checkbox"] {
-    margin-bottom: 10px; /* Add spacing between items */
-    margin-left: 150px; /* Ensure spacing from the label */
-    transform: scale(1.2); /* Slightly enlarge the checkbox for visibility */
-    position: relative; /* Allows precise positioning */
-    top: 25px; /* Fine-tune vertical adjustment */
-}
-
-/* Move the "Next" button lower */
-.services button {
-    margin-top: 70px; /* Add spacing above the button */
-    position: relative; /* Allow fine-tuned positioning */
-    top: 10px; /* Move the button lower */
+/* Add spacing below the top banner */
+.forms-create {
+    padding-top: 100px; /* Ensure space between the banner and content */
 }

@@ -4,6 +4,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "../styles/Form.css";
 import "../styles/Create.css";
+import discoverImage from '../assets/discover.jpg';
 
 function Create() {
     const [step, setStep] = useState(1); // Track the current step of the form
@@ -81,12 +82,22 @@ function Create() {
         <div className="forms-create">
             <div className="left-content">
                 <div className="fade-in phrase-container">
-                    <h2 className="phrase">Discover Student Vendors</h2>
-                    <h2 className="phrase">Less Commuting, More Saving</h2>
-                    <h2 className="phrase">Support Local Student Entrepreneurs</h2>
+                    <div className="fade-in image-container">
+                        <h2 className="phrase">Discover Student Vendors</h2>
+                        <img src= {discoverImage} />
+                    </div>
                 </div>
-                <div className="fade-in image-container">
-                    <img src="C:\Users\brian\gitHub_Projects\CS175-SH\student-hustlers\src\assets\logo.jpg" alt="Decorative" className="decorative-image" />
+                <div className="fade-in phrase-container">
+                    <div className="fade-in image-container">
+                        <h2 className="phrase">Commute Less, Save More</h2>
+                        <img src= {discoverImage} />
+                    </div>
+                </div>
+                <div className="fade-in phrase-container">
+                    <div className="fade-in image-container">
+                        <h2 className="phrase">Support Local Student Entrepreneurs</h2>
+                        <img src= {discoverImage} />
+                    </div>
                 </div>
             </div>
             <div className="form-container">
