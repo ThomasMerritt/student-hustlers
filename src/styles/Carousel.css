@@ -14,7 +14,7 @@
 }
 
 .carousel-items {
-    grid-area: carousel-items;
+    grid-area: carousel-item;
     display: flex;
     justify-content: center;
     align-items: center;
