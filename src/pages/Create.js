@@ -70,7 +70,7 @@ function Create() {
             });
     
             console.log("User data stored in Firestore");
-            window.location.href = "/";
+            window.location.href = "/student-home";
         } catch (error) {
             console.error("Sign up failed:", error.message);
             alert("Failed to sign up: " + error.message);

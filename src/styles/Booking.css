@@ -1,0 +1,200 @@
+/* General reset */
+*,
+*:active {
+    outline: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Booking Calendar */
+.booking-calendar {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 800px;
+    height: 450px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Left Column */
+.booking-left-column {
+    width: 40%;
+    background-color: #000000;
+    float: left;
+    height: 100%;
+}
+
+.booking-left-content {
+    padding: 40px;
+}
+
+.booking-date {
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.booking-date-detail {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.booking-notes-input-container {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.booking-notes-input {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.booking-add-note,
+.booking-remove-note {
+    float: right;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: bold;
+    margin-left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.booking-add-note:hover,
+.booking-remove-note:hover {
+    color: #ffffff;
+}
+
+.booking-notes-list {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.booking-note-item {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Right Column */
+.booking-right-column {
+    width: 60%;
+    float: left;
+    height: 100%;
+}
+
+.booking-right-content {
+    padding: 40px;
+}
+
+.booking-year {
+    color: #C7BEBE;
+    text-align: right;
+    margin-bottom: 70px;
+}
+
+.booking-months,
+.booking-weekdays,
+.booking-days {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.booking-month-item,
+.booking-weekday-item,
+.booking-day-item {
+    float: left;
+    text-align: center;
+}
+
+.booking-month-button,
+.booking-weekday-button,
+.booking-day-button {
+    text-transform: uppercase;
+    font-size: 12px;
+    border: none; /* Removes default button border */
+    background: none; /* Transparent background */
+    cursor: pointer; /* Pointer cursor for better interactivity */
+    padding: 8px 12px; /* Add some padding for better spacing */
+    border-radius: 4px; /* Slight rounding for a softer look */
+    color: #333; /* Neutral text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect */
+.booking-month-button:hover,
+.booking-weekday-button:hover,
+.booking-day-button:hover {
+    background-color: #f0f0f0; /* Light gray hover background */
+    color: #000; /* Darker text color on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Add focus effect for keyboard navigation */
+.booking-month-button:focus,
+.booking-weekday-button:focus,
+.booking-day-button:focus {
+    outline: 2px solid #007bff; /* Blue outline for focus */
+    outline-offset: 2px; /* Adds spacing between the button and the outline */
+    background-color: #e6f0ff; /* Light blue background on focus */
+}
+
+/* Add active effect for clicks */
+.booking-month-button:active,
+.booking-weekday-button:active,
+.booking-day-button:active {
+    transform: scale(0.95); /* Slight compression on click */
+    background-color: #ddd; /* Darker gray background */
+}
+
+/* Customize selected buttons */
+.booking-day-button.booking-selected {
+    background-color: black; /* Selected day background */
+    color: #fff; /* White text for contrast */
+    font-weight: bold; /* Emphasize selection */
+    border-radius: 12px; /* Rounder edges for selection */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for focus */
+}
+
+/* Event-specific styles */
+.booking-day-button.booking-event {
+    color: black; /* Highlighted event color */
+    font-weight: bold; /* Make events stand out */
+}
+
+/* Disabled state (optional) */
+.booking-month-button[disabled],
+.booking-weekday-button[disabled],
+.booking-day-button[disabled] {
+    cursor: not-allowed; /* Disable pointer */
+    color: #ccc; /* Light gray text */
+    background: none; /* No background */
+    opacity: 0.6; /* Reduced opacity */
+}
+
+.booking-selected {
+    font-weight: bold;
+    background-color: black !important;
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+.booking-event {
+    color: black;
+}
+
+.clearfix {
+    clear: both;
+}

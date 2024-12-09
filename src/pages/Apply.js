@@ -103,7 +103,7 @@ function Apply() {
             }
     
             // Redirect to the home page
-            window.location.href = "/";
+            window.location.href = "/hustler-home";
         } catch (error) {
             console.error("Sign up failed:", error.message);
             alert("Failed to sign up: " + error.message);

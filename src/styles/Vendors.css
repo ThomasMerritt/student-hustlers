@@ -1,0 +1,150 @@
+.top-vendor-item {
+    width: 80%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #ffffff; /* Optional: Add a white background */
+    border-radius: 5px; /* Optional: Slight rounding for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex-direction: column;
+}
+
+.name-rating {
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid black; /* Black border on the bottom */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vendor-name {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+    
+    
+}
+
+.vendor-rating {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black; /* Black border on the left */
+}
+
+.vendor-rank {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black; /* Black border on the left */
+    box-sizing: border-box; /* Ensures padding/border doesn't affect dimensions */
+}
+
+.vendor-rank p {
+    font-size: 24px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+}
+
+.vendor-body {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendor-body-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black; /* Black border on the right */
+}
+
+.vendor-picture {
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff; /* Optional: Add a white background */
+    border-radius: 5px; /* Optional: Slight rounding for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendor-body-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vendor-body-right-top {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendor-body-right-bottom {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendor-button {
+    height: 80%;
+    width: 100px;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Slight rounding for a modern look */
+    background-color: #007bff; /* Vibrant blue background */
+    color: white; /* White text for contrast */
+    font-size: 14px; /* Comfortable font size */
+    font-weight: 500; /* Slightly bold for readability */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    display: flex; /* Flex container for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 2px;
+}
+
+/* Hover Effect */
+.vendor-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Active State */
+.vendor-button:active {
+    background-color: #003f7f; /* Even darker blue on click */
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: none; /* Flatten button on click */
+}
+
+/* Disabled State (Optional) */
+.vendor-button:disabled {
+    background-color: #e0e0e0; /* Gray background for disabled */
+    color: #888; /* Light gray text */
+    cursor: not-allowed; /* Indicate non-interactivity */
+    box-shadow: none; /* Remove shadow for disabled state */
+}

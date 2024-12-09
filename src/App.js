@@ -6,6 +6,11 @@ import Create from "./pages/Create";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
+import Navbar from "./components/Navbar";
+import StudentHome from "./pages/StudentHome";
+import HustlerPage from "./pages/HustlerPage";
+import HustlerHome from "./pages/HustlerHome";
+import Booking from "./pages/Booking";
 
 function App() {
     return (
@@ -51,6 +56,46 @@ function App() {
                         <MainLayout>
                             <Apply />
                         </MainLayout>
+                    }
+                />
+                <Route
+                    path="/student-home"
+                    element={
+                      <MainLayout>
+                        <StudentHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/student-home"
+                    element={
+                      <MainLayout>
+                        <StudentHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/hustler-page"
+                    element={
+                      <MainLayout>
+                        <HustlerPage />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/hustler-home"
+                    element={
+                      <MainLayout>
+                        <HustlerHome />
+                      </MainLayout>
+                    }
+                />
+                <Route
+                    path="/booking"
+                    element={
+                      <MainLayout>
+                        <Booking />
+                      </MainLayout>
                     }
                 />
                 {/* Routes without MainLayout */}
