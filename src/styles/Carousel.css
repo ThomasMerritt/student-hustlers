@@ -10,3 +10,36 @@
     align-items: center;
     margin: 0 auto;
 }
+
+.carousel-items {
+    grid-area: carousel-items;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .left-arrow, .right-arrow {
+    grid-area: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+  }
+  
+  .right-arrow {
+    grid-area: right;
+  }
+  
+  .left-arrow p, .right-arrow p {
+    margin: 0;
+  }
