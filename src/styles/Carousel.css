@@ -1,5 +1,5 @@
 .carousel {
-    background-color: aqua;
+    background-color: white;
     width: 100%;
     height: 300px;
     display: grid;
@@ -9,6 +9,8 @@
     justify-items: center;
     align-items: center;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel-items {
@@ -16,17 +18,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
   .carousel-image {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 300px; /* Set a fixed height for the carousel */
+    overflow: hidden;
+    position: relative;
   }
 
   .left-arrow, .right-arrow {
-    grid-area: left;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -38,6 +44,10 @@
   
   .right-arrow {
     grid-area: right;
+  }
+
+  .left-arrow {
+    grid-area: left;
   }
   
   .left-arrow p, .right-arrow p {
