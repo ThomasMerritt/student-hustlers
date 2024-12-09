@@ -107,6 +107,10 @@
     margin-top: -50px; /* Move form higher on the page */
 }
 
+.services label {
+    flex-direction: column;
+}
+
 /* Style headings */
 .forms-create .form h1 {
     font-size: 30px;

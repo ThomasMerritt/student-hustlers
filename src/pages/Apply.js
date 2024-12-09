@@ -116,30 +116,35 @@ function Apply() {
                 <div className="form" id="form-1">
                     <h1>Sign Up</h1>
                     <input
+                        className="form-input"
                         type="text"
                         placeholder="Enter your name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
+                        className="form-input"
                         type="email"
                         placeholder="Enter your email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
+                        className="form-input"
                         type="password"
                         placeholder="Enter your password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <input
+                        className="form-input"
                         type="date"
                         placeholder="Enter your date of birth"
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
                     />
                      <select
+                        className="form-input"  
                         value={school}
                         onChange={(e) => setSchool(e.target.value)}
                         required
