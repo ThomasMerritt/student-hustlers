@@ -111,7 +111,7 @@ function Apply() {
     };
 
     return (
-        <div className="forms">
+        <div className="forms-apply">
             {step === 1 && (
                 <div className="form" id="form-1">
                     <h1>Sign Up</h1>

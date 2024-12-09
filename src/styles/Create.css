@@ -1,0 +1,155 @@
+/* Create.css */
+
+/* Center the form on the page */
+.forms-create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: #f0f0f0; /* Optional background */
+    gap: 100px; /* Adjust the spacing between the two sections */
+    padding: 0 10px;
+}
+
+/* Left-side container for phrases and image */
+.left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 600px;
+    padding-right: 30px;
+}
+
+/* Group styling for phrases and images */
+.phrase-image-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Space between groups */
+}
+
+/* Fade-in effect for phrases */
+.phrase-container .phrase {
+    opacity: 0;
+    transform: translateX(-30px); /* Start slightly off-screen */
+    animation: fadeInSlide 1s forwards;
+}
+
+.phrase-container .phrase:nth-child(1) {
+    animation-delay: 0s; /* First phrase */
+}
+
+.phrase-container .phrase:nth-child(2) {
+    animation-delay: 1s; /* Second phrase */
+}
+
+.phrase-container .phrase:nth-child(3) {
+    animation-delay: 2s; /* Third phrase */
+}
+
+/* Image fade-in effect */
+.phrase-image-group img {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-30px); /* Start slightly off-screen */
+    animation: fadeInSlide 1s forwards; /* Use fade-in animation */
+    animation-delay: 5s; /* Delay to match the text fade-in */
+    max-width: 80%; /* Limit image size to prevent overlap */
+    max-height: 150px; /* Restrict height to avoid covering the banner */
+    border-radius: 8px; /* Optional rounded corners */
+    margin-top: 10px; /* Space between text and image */
+    object-fit: contain; /* Maintains image aspect ratio */
+}
+
+.phrase-image-group:nth-child(2) img {
+    animation-delay: 1.5s; /* Adjust delay for the second phrase */
+}
+
+.phrase-image-group:nth-child(3) img {
+    animation-delay: 2.5s; /* Adjust delay for the third phrase */
+}
+
+/* Fade-in animation */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Image container styling */
+.image-container {
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+/* Style the form container */
+.forms-create .form {
+    background-color: #ffffff; /* Form background color */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: -50px; /* Move form higher on the page */
+}
+
+/* Style headings */
+.forms-create .form h1 {
+    font-size: 30px;
+    color: #333; /* Font color */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Style input fields */
+.forms-create .form input,
+.forms-create .form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style buttons */
+.forms-create .form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forms-create .form button:hover {
+    background-color: #d9dbdd; /* Darker color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .forms-create .form {
+        padding: 15px 20px;
+    }
+}
+
+/* Add spacing below the top banner */
+.forms-create {
+    padding-top: 100px; /* Ensure space between the banner and content */
+}

@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth"; // Import g
 import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
 import { auth, db } from "../firebase-config"; // Import your Firebase configuration
 import "../styles/Form.css";
+import "../styles/Login.css";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -57,7 +58,7 @@ function Login() {
     };
 
     return (
-        <div className="forms">
+        <div className="forms-login">
             <form className="form" onSubmit={handleLogin}>
                 <h2>Login</h2>
                 <input
