@@ -1,0 +1,440 @@
+.search-profile-container {
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-areas:
+        "search profile";
+    grid-template-columns: 5fr 1fr;
+    
+}
+
+.search-container {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.search-container input {
+    width: 100%;
+    height: 70%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #007bff; /* Highlight border on focus */
+}
+
+.profile-container {
+    grid-area: profile;
+    display: flex;
+    justify-content: space-between; /* Space between profile and image */
+    align-items: center;
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-container:hover {
+    background-color: #d6ecff; /* Slightly darker blue on hover */
+}
+
+/* Profile text styling */
+.profile h2 {
+    margin: 0;
+    font-size: 20px; /* Slightly larger font for emphasis */
+    color: #003366; /* Dark blue text color */
+}
+
+/* Profile picture styling */
+.profile-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 50%; /* Circular shape for the image */
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensures the content stays inside the circle */
+}
+
+/* Placeholder text for the profile picture */
+.profile-picture p {
+    font-size: 14px;
+    color: #999; /* Light gray text for the placeholder */
+}
+
+.filter-utility-container {
+    background-color: aliceblue;
+    width: 100%;
+    height: 100px; /* Define height explicitly */
+    display: grid;
+    grid-template-areas: "filter utility";
+    grid-template-columns: 5fr 1fr;
+    margin-top: 20px;
+}
+
+.filter-container {
+    grid-area: filter;
+    display: flex; /* Horizontal alignment for buttons */
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: flex-start; /* Aligns buttons at the top */
+    height: 100%;
+    gap: 10px; /* Add spacing between buttons */
+    padding: 10px; /* Optional: Add some padding for better spacing */
+}
+
+/* Modernized Filter Buttons */
+.filter-button {
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    padding: 10px 20px; /* Increased padding for a better click area */
+    background-color: #007bff; /* Vibrant blue background */
+    color: white; /* White text for contrast */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    font-size: 14px; /* Modern font size */
+    font-weight: 500; /* Slightly bold for readability */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect */
+.filter-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Active State */
+.filter-button:active {
+    background-color: #003f7f; /* Even darker blue on active */
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Responsive Design (Optional) */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center; /* Center align vertically stacked buttons */
+    }
+
+    .filter-button {
+        width: 100%; /* Make buttons full width on smaller screens */
+    }
+}
+
+.utility-container {
+    grid-area: utility;
+    background-color: #e3e6e8; /* Softer gray for a modern touch */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Maintain original height */
+    border-radius: 5px; /* Slight rounding for a modern appearance */
+    border: 1px solid #ccc; /* Subtle border for defined edges */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Minimal shadow for slight depth */
+}
+
+.utility-button {
+    display: flex;
+    align-items: center; /* Vertically center text inside the button */
+    padding-left: 10px;
+    border: 1px solid #bbb; /* Softer border color */
+    padding: 8px 16px; /* Maintain original button size */
+    background-color: #ffffff; /* Clean white background */
+    color: #333; /* Neutral text color */
+    font-size: 14px; /* Comfortable font size */
+    font-weight: 500; /* Slightly bold for readability */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow for slight elevation */
+}
+
+/* Hover Effect */
+.utility-button:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+    border-color: #aaa; /* Slightly darker border on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Active State */
+.utility-button:active {
+    background-color: #e0e0e0; /* Darker gray on click */
+    box-shadow: none; /* Flatten button on click */
+}
+
+.student-home-body {
+    background-color: aliceblue;
+    width: 100%;
+    height: 1000px;
+    display: grid;
+    grid-template-areas:
+        "appointments-favorites-container service-vendors-container";
+    grid-template-columns: 3fr 8fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.appointments-favorites-container {
+    grid-area: appointments-favorites-container;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers horizontally */
+    align-items: flex-start; /* Aligns at the top */
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.upcoming-appointments {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    padding: 10px; /* Optional: Adds space inside the container */
+    background-color: #ffffff; /* Optional: Ensure a clean background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+    overflow: hidden;
+}
+
+.upcoming-appointments-title {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+}
+
+.upcoming-appointments-list {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Appointment List Container */
+.upcoming-appointments-list {
+    padding: 20px;
+}
+
+/* Individual Appointment Item */
+.appointment-item {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between fields */
+    padding: 15px;
+    margin-bottom: 15px; /* Space between appointments */
+
+}
+
+/* Appointment Input Fields */
+.appointment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.appointment-input:focus {
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Glow effect */
+}
+
+/* Reschedule Button */
+.reschedule-button {
+    align-self: flex-start; /* Aligns button to the left */
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.reschedule-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.more-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.more-button {
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add slight rounding for modern look */
+    padding: 10px 20px; /* Increase padding for a better click area */
+    background-color: #007bff; /* Vibrant blue background */
+    color: white; /* White text for contrast */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    margin-right: 5px; /* Maintain existing spacing */
+    font-size: 14px; /* Ensure modern font size */
+    font-weight: 500; /* Slightly bold for readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin-top: 10px;
+}
+
+.more-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.more-button:active {
+    background-color: #003f7f; /* Even darker blue for active state */
+    transform: scale(0.95); /* Slightly shrink when clicked */
+}
+
+.favorite-vendors {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit maximum width for readability */
+    margin: 20px auto; /* Center the container on the page */
+    padding: 15px; /* Add internal padding */
+    background-color: #ffffff; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border for structure */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Flex container for the entire section */
+    flex-direction: column; /* Align children vertically */
+    height: 400px; /* Fixed height for consistency */
+}
+
+/* Title Section */
+.favorite-vendors-title {
+    width: 100%;
+    height: 10%; /* Maintain height proportion */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold; /* Bold for clarity */
+    color: #333; /* Neutral dark color */
+    border-bottom: 1px solid #ddd; /* Divider between title and list */
+}
+
+/* Vendors List Section */
+.favorite-vendors-list {
+    width: 100%;
+    height: 90%; /* Maintain height proportion */
+    display: flex;
+    justify-content: flex-start; /* Align items to the top */
+    flex-direction: column; /* Vertical stacking */
+    padding: 10px; /* Add space inside the list */
+    overflow-y: auto; /* Allow scrolling for long content */
+    color: #555; /* Subtle dark gray color */
+}
+
+/* Empty State Text */
+.favorite-vendors-list p {
+    margin: 5px 0; /* Space between paragraphs */
+    font-size: 16px; /* Comfortable font size */
+    font-style: italic; /* Italicize for emphasis */
+    color: #888; /* Lighter gray to indicate empty state */
+}
+
+/* Scrollbar Styling (Optional) */
+.favorite-vendors-list::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.favorite-vendors-list::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Scrollbar color */
+    border-radius: 4px; /* Rounded edges for scrollbar */
+}
+
+.favorite-vendors-list::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa; /* Darker on hover */
+}
+
+.service-vendors-container {
+    grid-area: service-vendors-container;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.service-vendors-title {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+}
+.top-vendors-list {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.top-vendors-title {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+}
+
+.top-vendors-list {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;}
+
+.explore-vendors-title {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold;
+}
+
+.explore-vendors-list {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+}

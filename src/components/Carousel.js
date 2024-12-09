@@ -24,7 +24,6 @@ function Caraousel() {
             </div>
             <div className="carousel-items">
                 <img src = {images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className = "carousel-image" />
-
             </div>
             <div className="right-arrow" onClick={goToNext}>
                 <p>Next</p>

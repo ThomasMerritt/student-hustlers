@@ -1,0 +1,354 @@
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #reviews-442 {
+        box-sizing: border-box;
+        /* prevents overflow from grey box */
+        overflow: hidden;
+        position: relative;
+    }
+    #reviews-442:before {
+        /* grey box */
+        content: "";
+        width: 100%;
+        height: 40%;
+        background: #fafbfc;
+        border-top: 1px solid #b4b2c7;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        /* overlap a but to cover seams between sections */
+        bottom: -0.125rem;
+        left: 0;
+    }
+    #reviews-442 .cs-wrapper {
+        /* change width to make sure there is 16px gap left and right */
+        width: 91.112%;
+        /* changes at tablet */
+        max-width: 34.375rem;
+        /* using margin instead of padding so the green bar can rest at the true bottom of the section, without padding interrupting it */
+        margin: var(--sectionPadding);
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        /* clips corners of green border */
+        overflow: hidden;
+        position: relative;
+    }
+    #reviews-442 .cs-wrapper:after {
+        /* green bar */
+        content: "";
+        width: 100%;
+        height: 0.5rem;
+        background: var(--primaryLight);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+    #reviews-442 .cs-container {
+        width: 100%;
+        margin: auto;
+        /* pushes down the same amount as the picture is pulled up */
+        margin-top: 5.8125rem;
+        /* 20px - 108px left & right, clamp changes at desktop */
+        /* 48px - 100px bottom */
+        padding: 0 clamp(1.25rem, 6vw, 6.75rem) clamp(2.5rem, 8vw, 6.25rem);
+        border-radius: 1.5rem;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        background-color: #14142b;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+    #reviews-442 .cs-review {
+        /* 16px - 25px */
+        font-size: clamp(1rem, 2vw, 1.5625rem);
+        line-height: 1.5em;
+        /* 24px - 48px changes at tablet */
+        margin: 0 0 clamp(1.5rem, 3vw, 3rem) 0;
+        color: #dad9e3;
+        position: relative;
+        z-index: 1;
+    }
+    #reviews-442 .cs-quote {
+        /* 40px - 120px , clamp changes at tablet */
+        width: clamp(2.5rem, 11vw, 7.5rem);
+        height: auto;
+        display: block;
+        position: absolute;
+        left: 0;
+        /* changes at tablet */
+        top: -3.75rem;
+        z-index: -1;
+    }
+    #reviews-442 .cs-author {
+        /* 16px - 31px */
+        font-size: clamp(1rem, 2.6vw, 1.9375rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        color: #fafbfc;
+    }
+    #reviews-442 .cs-picture {
+        /* 116px - 328px */
+        width: clamp(7.25rem, 24vw, 20.5rem);
+        margin-top: -5.8125rem;
+        margin-bottom: 2.25rem;
+        border-radius: 8.75rem;
+        border: clamp(8px, 1vw, 12px) solid #ffffff;
+        background-color: #fff;
+        box-sizing: content-box;
+        /* clips the img tag corners */
+        overflow: hidden;
+        /* width divided by height */
+        aspect-ratio: 0.65079365;
+        display: block;
+        /* sends it to the top of the flexbox */
+        order: -1;
+        position: relative;
+    }
+    #reviews-442 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* makes it act like a background image */
+        object-fit: cover;
+        /* makes the top of the image line up at the top of the container */
+        object-position: top;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #reviews-442 .cs-wrapper {
+        max-width: 80rem;
+    }
+    #reviews-442 .cs-container {
+        padding-top: 6.75rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #reviews-442 .cs-content {
+        width: 57%;
+    }
+    #reviews-442 .cs-review {
+        /* 48px - 96px, clamp changes at desktop */
+        margin-bottom: clamp(3rem, 7vw, 6rem);
+    }
+    #reviews-442 .cs-quote {
+        /* 80px - 120px , clamp changes at tablet */
+        width: clamp(5rem, 8vw, 7.5rem);
+        top: -3.3125rem;
+        /* 20px - 64px */
+        left: calc(clamp(1.25rem, 2vw, 4rem) * -1);
+    }
+    #reviews-442 .cs-picture {
+        margin: 0;
+        /* reset its order */
+        order: initial;
+        position: absolute;
+        /* 50px - 108px - wrapped in calc function turn multiple value by negative 1 and get a negative clamp value*/
+        top: calc(clamp(3.125rem, 8vw, 6.75rem) * -1);
+        /* 52px - 100px */
+        right: clamp(3.25rem, 7vw, 6.25rem);
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #reviews-442 .cs-container {
+        /* 60px - 108px left & right */
+        /* 48px - 100px bottom */
+        padding: 6.75rem clamp(3.75rem, 4.6vw + 2rem, 6.75rem)
+            clamp(2.5rem, 8vw, 6.25rem);
+    }
+    #reviews-442 .cs-review {
+        /* 48px - 96px changes at tablet */
+        margin: 0 0 clamp(3rem, 4.2vw + 2rem, 6rem) 0;
+    }
+}
+
+/*-- -------------------------- -->
+<---         Why Choose         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0em) {
+    #why-choose-442 {
+        padding: var(--sectionPadding);
+        background-color: #fafbfc;
+    }
+    #why-choose-442 .cs-container {
+        width: 100%;
+        /* changes to 1280px at tablet */
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #why-choose-442 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+    #why-choose-442 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #why-choose-442 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+    #why-choose-442 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        /* 12px - 20px */
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    }
+    #why-choose-442 .cs-item {
+        list-style: none;
+        width: 48%;
+        /* changes on tablet */
+        max-width: 28.875rem;
+        /* 24px - 40px top & bottom */
+        /* 24px - 40px left & right */
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+        border-radius: 1rem;
+        background-color: #fff;
+        border: 1px solid #dad9e3;
+        box-shadow: 0px 24px 54px rgba(87, 107, 147, 0.12);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        transition:
+            background-color 0.3s,
+            transform 0.3s,
+            box-shadow 0.3s,
+            border 0.3s;
+    }
+    #why-choose-442 .cs-item:before {
+        /* green border on hover */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 4px solid var(--primary);
+        border-radius: 0.75rem;
+        /* prevents border from affecting height and width */
+        box-sizing: border-box;
+        /* prevents the mouse from interacting with it */
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        transition: opacity 0.3s;
+    }
+    #why-choose-442 .cs-item:hover {
+        background-color: #fff;
+        transform: translateY(-0.4375rem);
+        border-color: var(--primary);
+    }
+    #why-choose-442 .cs-item:hover:before {
+        opacity: 1;
+    }
+    #why-choose-442 .cs-picture {
+        /* 40px - 72px */
+        width: clamp(2.5rem, 6.5vw, 4.5rem);
+        /* 40px - 72px */
+        height: clamp(2.5rem, 6.5vw, 4.5rem);
+        margin: 0;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--primary);
+        position: relative;
+        z-index: 1;
+    }
+    #why-choose-442 .cs-icon {
+        /* 24px - 32px */
+        height: clamp(1.5rem, 2vw, 2rem);
+        width: auto;
+    }
+    #why-choose-442 .cs-number {
+        font-size: var(--headerFontSize);
+        font-weight: 400;
+        text-align: center;
+        line-height: 1.2em;
+        margin: 0;
+        margin-bottom: 0.25rem;
+        color: var(--headerColor);
+        transition: color 0.3s;
+    }
+    #why-choose-442 .cs-item-text {
+        /* 14px - 20px */
+        font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+        text-align: center;
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+        transition: color 0.3s;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+    #why-choose-442 .cs-container {
+        max-width: 80rem;
+    }
+    #why-choose-442 .cs-card-group {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        column-gap: 1.25rem;
+    }
+    #why-choose-442 .cs-item {
+        width: 100%;
+        max-width: 25.8125rem;
+    }
+}
+
+.upcoming-text {
+    font-size: 1.5em; /* Increase font size (adjust as needed) */
+    font-weight: bold; /* Make the text bold */
+}
